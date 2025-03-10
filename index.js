@@ -8,6 +8,14 @@ const {Server} = require('socket.io');
 const io = new Server(expressServer);
 
 
+io.on('connection', (socket) => {
+    console.log("New user connection");
+
+    socket.on("disconnect", () => {
+        console.log("User disconnected")
+    })
+})
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname+"/index.html")
 })
