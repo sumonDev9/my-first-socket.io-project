@@ -16,10 +16,16 @@
         // Creates a socket object to establish a connection with the server
         const socket = io();
 
-        socket.on('message', (msg) => { // Listens for the 'message' event from the server 
-            // document.write(msg)  // This would overwrite the entire page content, so it's commented out
-            document.getElementById("myTime").innerHTML="";  // Clears any previous content inside the h1 element
-            document.getElementById("myTime").innerHTML=msg; // Updates the h1 element with the received message
+        // socket.on('message', (msg) => { // Listens for the 'message' event from the server 
+        //     // document.write(msg)  // This would overwrite the entire page content, so it's commented out
+        //     document.getElementById("myTime").innerHTML="";  // Clears any previous content inside the h1 element
+        //     document.getElementById("myTime").innerHTML=msg; // Updates the h1 element with the received message
+        // })
+
+        // custom
+        socket.on('MyEvent', (msg) => { // Listens for the 'message' event from the server 
+            document.getElementById("myTime").innerHTML=""  // Clears any previous content inside the h1 element
+            document.getElementById("myTime").innerHTML=msg // Updates the h1 element with the received message
         })
     </script>
 </body>

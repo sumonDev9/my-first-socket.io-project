@@ -18,7 +18,8 @@ io.on('connection', (socket) => {
     setInterval(() => {
         let d = new Date();
         let t = d.getTime();
-        socket.send(t);
+        // socket.send(t);
+        socket.emit("MyEvent", t) // custom
     }, 500)
 
     socket.on("disconnect", () => {
