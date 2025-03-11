@@ -13,13 +13,13 @@ io.on('connection', (socket) => {
 
     // setTimeout( () => {
     //     socket.send("My love Adurini")
-    // }, 5000)
+    // }, 1000)
 
     setInterval(() => {
         let d = new Date();
         let t = d.getTime();
         socket.send(t);
-    }, 2000)
+    }, 500)
 
     socket.on("disconnect", () => {
         console.log("User disconnected")
